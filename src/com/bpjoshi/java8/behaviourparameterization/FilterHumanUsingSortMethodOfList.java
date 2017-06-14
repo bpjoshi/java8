@@ -32,10 +32,16 @@ public class FilterHumanUsingSortMethodOfList {
 				return h1.getAge().compareTo(h2.getAge());
 			}
 		});
+		
 		for(Human h: humanList){
 			System.out.println(h.getName());
 		}
-		
+		//Printing using Java 8 code using lambda expression for the same will be as below
+		System.out.println("\nPrint the Humans in alphabetical order of their names using lambda");
+		humanList.sort((Human h1, Human h2)->h1.getName().compareTo(h2.getName()));
+		for(Human h: humanList){
+				System.out.println(h.getName());
+		}
 	}
 }
 
