@@ -1,5 +1,5 @@
 package com.bpjoshi.java8.lambda;
-/*
+/**
 @author Bhagwati Prasad(bpjoshi)
 */
 public class LIntro{

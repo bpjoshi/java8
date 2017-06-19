@@ -1,5 +1,9 @@
 package com.bpjoshi.java8.lambda;
-
+/**
+ * 
+ * @author Bhagwati Prasad(bpjoshi)
+ *
+ */
 public class StringLengthExample {
 	public static void main(String... args){
 		//LengthCalculator lCLambda=(String s)->s.length();
