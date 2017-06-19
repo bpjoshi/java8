@@ -1,3 +1,5 @@
+package com.bpjoshi.java8.lambda;
+
 import java.util.function.IntPredicate;
 /*
 @author Bhagwati Prasad(bpjoshi)
