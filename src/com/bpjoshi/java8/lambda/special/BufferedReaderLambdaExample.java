@@ -3,7 +3,11 @@ package com.bpjoshi.java8.lambda.special;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * 
+ * @author Bhagwati Prasad(bpjoshi)
+ *
+ */
 public class BufferedReaderLambdaExample {
 	
 	public static String processFile(BufferedReaderProcessor brp) throws IOException{
