@@ -1,28 +1,32 @@
 package com.bpjoshi.java8.lambda.special;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class BufferedReaderLambdaExample {
-	public static void main(String[] args) {
-		String oneLine=processFile((BufferedReader br)->br.readLine());
-	}
 	
-	public static String processFile(BufferedReaderProcessor p){
+	public static String processFile(BufferedReaderProcessor brp) throws IOException{
 		try(BufferedReader br=new BufferedReader(new FileReader("data.txt"))){
-			try {
-				return p.process(br);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			return brp.process(br);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
 		}
 		return null;
 	}
+	
+	public static void main(String[] args) {
+		try {
+			String aLine=processFile((BufferedReader br)->br.readLine());
+			String twoLine=processFile((BufferedReader br)->br.readLine()+br.readLine());
+			System.out.println(twoLine);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
 	
 }
