@@ -2,7 +2,11 @@ package com.bpjoshi.java8.streams;
 
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * 
+ * @author Bhagwati Prasad(bpjoshi)
+ * returns a list of movies
+ */
 public class MoviesList {
 	public static List<Movie> giveMoviesList(){
 		List<Movie> movies=Arrays.asList(

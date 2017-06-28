@@ -35,5 +35,9 @@ public class Movie {
 		return name;
 	}
 	
+	public Type getType() {
+		return type;
+	}
+
 	public enum Type{HORROR, ROMANCE, FANTASY, WAR, COMEDY}
 }
