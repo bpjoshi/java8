@@ -31,9 +31,7 @@ public class StreamEx {
 				.collect(toList());
 		//use movies.parallelStream() to process the collection in parallelization
 		// print it.
-		for (String m : below5Movies) {
-			System.out.println(m);
-		}
+		System.out.println(below5Movies);
 	}
 	/*
 	 * select movies which are fantasy genre and sort by rating
@@ -44,9 +42,7 @@ public class StreamEx {
 				.sorted(comparing(Movie::getRating).reversed())
 				.map(Movie::getName).collect(toList());
 		// print it.
-		for (String m : fantasyMovies) {
-			System.out.println(m);
-		}
+		System.out.println(fantasyMovies);
 	}
 	
 	/*
@@ -58,8 +54,6 @@ public class StreamEx {
 				.filter(m -> m.isAdult()==true)
 				.map(Movie::getName).collect(toList());
 		// print it.
-		for (String m : adultMovies) {
-			System.out.println(m);
-		}
+		System.out.println(adultMovies);
 	} 
 }
