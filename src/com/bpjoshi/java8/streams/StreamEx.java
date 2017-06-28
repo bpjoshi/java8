@@ -25,10 +25,11 @@ public class StreamEx {
 	 * select movies which have ratins below 5 and sort them alphatically
 	 */
 	public static void below5Movies(List<Movie> movies) {
-		List<String> below5Movies = movies.stream()
+		List<String> below5Movies = movies.parallelStream()
 				.filter(m -> m.getRating() < 5)
 				.sorted(comparing(Movie::getName)).map(Movie::getName)
 				.collect(toList());
+		//use movies.parallelStream() to process the collection in parallelization
 		// print it.
 		for (String m : below5Movies) {
 			System.out.println(m);
