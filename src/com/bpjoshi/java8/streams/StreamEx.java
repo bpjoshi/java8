@@ -11,17 +11,54 @@ import static java.util.stream.Collectors.toList;
  */
 public class StreamEx {
 	public static void main(String[] args) {
-		/*
-		 * select movies which have ratins below 5 and sort them alphatically
-		 */
-		List<Movie> movies=MoviesList.giveMoviesList();
-		List<String> below5Movies=movies.stream()
-										.filter(m->m.getRating()<5)
-										.sorted(comparing(Movie::getName))
-										.map(Movie::getName)
-										.collect(toList());
-		for(String m:below5Movies){
+		
+		List<Movie> movies = MoviesList.giveMoviesList();
+		//Movies below rating 5
+		System.out.println("Movies which have a rating less than 5 sorted by name:\n");
+		below5Movies(movies);
+		System.out.println("\nMovies of Fantasy Genre sorted by rating:\n");
+		fantasyMovies(movies);
+		System.out.println("\nAdult Movies:\n");
+		adultMovies(movies);
+	}
+	/*
+	 * select movies which have ratins below 5 and sort them alphatically
+	 */
+	public static void below5Movies(List<Movie> movies) {
+		List<String> below5Movies = movies.stream()
+				.filter(m -> m.getRating() < 5)
+				.sorted(comparing(Movie::getName)).map(Movie::getName)
+				.collect(toList());
+		// print it.
+		for (String m : below5Movies) {
 			System.out.println(m);
 		}
 	}
+	/*
+	 * select movies which are fantasy genre and sort by rating
+	 */
+	public static void fantasyMovies(List<Movie> movies){
+		List<String> fantasyMovies = movies.stream()
+				.filter(m -> m.getType().equals(Movie.Type.FANTASY))
+				.sorted(comparing(Movie::getRating).reversed())
+				.map(Movie::getName).collect(toList());
+		// print it.
+		for (String m : fantasyMovies) {
+			System.out.println(m);
+		}
+	}
+	
+	/*
+	 * Adult Movies; 
+	 * not for children ;) 
+	 */
+	public static void adultMovies(List<Movie> movies){
+		List<String> adultMovies = movies.stream()
+				.filter(m -> m.isAdult()==true)
+				.map(Movie::getName).collect(toList());
+		// print it.
+		for (String m : adultMovies) {
+			System.out.println(m);
+		}
+	} 
 }

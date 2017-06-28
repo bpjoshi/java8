@@ -11,7 +11,7 @@ public class MoviesList {
 	public static List<Movie> giveMoviesList(){
 		List<Movie> movies=Arrays.asList(
 				new Movie("Harry Potter", false, 5, "EN", Movie.Type.FANTASY),
-				new Movie("LOTR", false, 5, "EN", Movie.Type.FANTASY),
+				new Movie("LOTR", false, 4, "EN", Movie.Type.FANTASY),
 				new Movie("Katyn", false, 4, "PL", Movie.Type.WAR),
 				new Movie("Bahubali", false, 5, "HI", Movie.Type.FANTASY),
 				new Movie("Titanic", false, 5, "EN", Movie.Type.ROMANCE),
